@@ -1,10 +1,13 @@
 package com.eea.v2.controller.pe;
 
 import com.eea.v2.model.pe.PE;
+import com.eea.v2.service.pe.PELogoService;
 import com.eea.v2.service.pe.PEService;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -13,6 +16,10 @@ import java.util.List;
 public class PEController {
     @Autowired
     private PEService peService;
+
+    @Autowired
+    private PELogoService logoService;
+
 
     /**
      * initiate PE account
@@ -68,6 +75,7 @@ public class PEController {
         }
         return ret;
     }
+
 
     @GetMapping("/all")
     public List<PE> getAll(){

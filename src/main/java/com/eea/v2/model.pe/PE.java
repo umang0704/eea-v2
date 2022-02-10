@@ -18,12 +18,9 @@ public class PE {
     private String name;
     private String email;
     private String password;
-
     private String about;
     private String website;
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date date;
 
-    @Lob
-    private byte[] logo;
 }

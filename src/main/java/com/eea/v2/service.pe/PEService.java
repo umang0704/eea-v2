@@ -5,6 +5,8 @@ import com.eea.v2.repo.pe.PERepo;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.sql.Date;
 import java.text.ParseException;
@@ -38,6 +40,18 @@ public class PEService {
         }
         return this.repo.save(pe);
     }
+    public PE saveBasicDetails01(PE pe,JSONObject object){
+        pe.setAbout(object.get("about").toString());
+        pe.setWebsite(object.get("website").toString());
+        try {
+            java.util.Date date = new SimpleDateFormat("dd-MM-yyyy").parse(object.get("from").toString());
+            pe.setDate(new Date(date.getTime()));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return this.repo.save(pe);
+    }
+
 
     //Basic Operations
     public List<PE> getAll(){
@@ -46,4 +60,5 @@ public class PEService {
     public Optional<PE> findById(Integer id){
         return this.repo.findById(id);
     }
+
 }
