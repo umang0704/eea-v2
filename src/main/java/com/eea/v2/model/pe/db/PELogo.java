@@ -1,4 +1,4 @@
-package com.eea.v2.model.pe;
+package com.eea.v2.model.pe.db;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

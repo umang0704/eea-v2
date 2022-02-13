@@ -1,7 +1,6 @@
-package com.eea.v2.model.pe;
+package com.eea.v2.model.pe.db;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -10,6 +9,10 @@ import java.sql.Date;
 @Entity
 @Getter
 @Setter
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class PE {
     @Id
     @SequenceGenerator(name = "pe_sequence",sequenceName = "pe_sequence",allocationSize = 1)

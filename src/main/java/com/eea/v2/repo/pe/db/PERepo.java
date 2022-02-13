@@ -1,6 +1,6 @@
-package com.eea.v2.repo.pe;
+package com.eea.v2.repo.pe.db;
 
-import com.eea.v2.model.pe.PE;
+import com.eea.v2.model.pe.db.PE;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

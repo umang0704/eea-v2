@@ -1,7 +1,7 @@
 package com.eea.v2.controller.pe;
 
-import com.eea.v2.model.pe.PELogo;
-import com.eea.v2.service.pe.PELogoService;
+import com.eea.v2.model.pe.db.PELogo;
+import com.eea.v2.service.pe.db.PELogoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
@@ -9,7 +9,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 

@@ -1,7 +1,7 @@
-package com.eea.v2.service.pe;
+package com.eea.v2.service.pe.db;
 
-import com.eea.v2.model.pe.PELogo;
-import com.eea.v2.repo.pe.PELogoRepo;
+import com.eea.v2.model.pe.db.PELogo;
+import com.eea.v2.repo.pe.db.PELogoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
