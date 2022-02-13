@@ -25,7 +25,7 @@ public class LeaderController {
     private ImageService imageService;
 
     @PostMapping(path = "/add")
-    public AddLeaderResp add(@RequestBody AddLeaderReq req){
+    public AddLeaderResp add( AddLeaderReq req){
         try{
             MultipartFile file = req.getImage();
             Image i = new Image(file.getName(), file.getContentType(), file.getBytes());
