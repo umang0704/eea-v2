@@ -3,6 +3,7 @@ package com.eea.v2.controller.pe;
 import com.eea.v2.model.pe.db.Manifesto;
 import com.eea.v2.model.pe.signup.AddManifestoReq;
 import com.eea.v2.model.pe.signup.AddManifestoResp;
+import com.eea.v2.service.general.FileSizeImp;
 import com.eea.v2.service.pe.db.ManifestoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,7 +32,7 @@ public class ManifestoController {
             m = this.manifestoService.add(m);
             return AddManifestoResp.builder()
                     .fileName(m.getFileName())
-                    .fileSize(Double.toString((file.getSize()*0.00000095367432)))
+                    .fileSize(Double.toString(FileSizeImp.getSizeInMB(file.getSize())))
                     .fileType(file.getContentType())
                     .build();
         }catch (RuntimeException e){
